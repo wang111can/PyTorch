@@ -44,11 +44,11 @@ class Model(torch.nn.Module):
 
 model = Model()
 dataset = DiabetesDataset()
-train_loader = DataLoader(dataset=dataset, batch_size=32, shuffle=True, num_workers=2)
+train_loader = DataLoader(dataset=dataset, batch_size=16, shuffle=True, num_workers=2)
       
 
 criterion = torch.nn.BCELoss(size_average=True)
-optimizer = torch.optim.SGD(model.parameters(), lr=0.001)
+optimizer = torch.optim.SGD(model.parameters(), lr=0.1)
 # mini-batch training
 
 for epoch in range(1000): 
